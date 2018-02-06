@@ -6,7 +6,6 @@
  * 
  */
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 public class Main {
 
@@ -16,26 +15,30 @@ public class Main {
 		Scanner reader = new Scanner(System.in);
 		int userInput = 0; 
 		int fibSeries = 0; 
-		
+		long startTime = System.nanoTime();
+		long endTime = System.nanoTime();
+		long timeElapsed = endTime- startTime;
 			// Welcome the user
 			System.out.println("Welcome to the Fibonacci Sequence Program");
 			
 			//acquire userInput
-			System.out.println("Please Enter a number less than 50 =>");
+			System.out.println("Enter the Number=>");
 			userInput = reader.nextInt();
 			reader.close();
 			System.out.println("UserInput=>" + userInput);
 			
 			//starting recursive function time
-			long startTime = System.nanoTime();
+
+			startTime = System.nanoTime();
 			//recursive function print out
 			for(int i = 0; i < userInput;i++ ) {
 				fibSeries = fiboSeriesRec(i);
 				System.out.print(fibSeries+" ");
 			}
-			long endTime = System.nanoTime();
-			long timeElapsed = endTime- startTime;
-			 System.out.println("\n\n Recursive Method: Elapsed time is: " + timeElapsed+ " nanoseconds");	
+			//end recursive time
+			endTime = System.nanoTime();
+			timeElapsed = endTime- startTime;
+			System.out.println("\nRecursive Method: Elapsed time is: " + timeElapsed+ " nanoseconds\n");	
 			
 			//starting iterative function time
 			startTime = System.nanoTime();
@@ -44,9 +47,10 @@ public class Main {
 					fibSeries = fiboSeriesIte(i);
 					System.out.print(fibSeries+" ");
 				} 
+			//end iterative time
 			 endTime = System.nanoTime();
 			 timeElapsed = endTime- startTime;
-			 System.out.println("\n\n Iterative Method:Elapsed time in nanoseconds is: " + timeElapsed+ " nanoseconds");	
+			 System.out.println("\nIterative Method: Elapsed time in nanoseconds is: " + timeElapsed+ " nanoseconds");	
 			
 	}
 		// fiboSeriesRec a recursive function that calls itself
