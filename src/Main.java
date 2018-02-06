@@ -29,14 +29,18 @@ public class Main {
 			reader.close();
 			System.out.println("UserInput=>" + userInput);
 			
-			//loops start at 0
-		
+			//recursive function print out
 			for(int i = 0; i < userInput;i++ ) {
 				fibSeries = fiboSeriesRec(i);
 				System.out.print(fibSeries+" ");
 			}
 			 System.out.println("\n\nElapsed time in nanoseconds is: " + timeElapsed);	
-			 
+			
+			 //iterative function print out
+			 for(int i = 0; i < userInput;i++ ) {
+					fibSeries = fiboSeriesIte(i);
+					System.out.print(fibSeries+" ");
+				} System.out.println("\n\nElapsed time in nanoseconds is: " + timeElapsed);	
 			
 	}
 		// fiboSeriesRec a recursive function that calls itself
@@ -54,12 +58,15 @@ public class Main {
 		}
 		
 		//fiboSeriesIte: iterative function that uses a for loop
-		/*public static int fiboSeriesIte(int x){
-			int fib1 = 0;
+		// (1) https://stackoverflow.com/questions/21710756/recursion-vs-iteration-fibonacci-sequence
+		public static int fiboSeriesIte(int x){
+			int fib1 = 0, fib2 = 1, fib3 =1;  
 			for (int i = 0; i < x; i++) {
-			return -1;	
+				fib1 = fib2;
+				fib2 = fib3;
+				fib3 = fib1 + fib2; 
 			}
-			
-		}*/
+			return fib1; 
+		}
 
 }
