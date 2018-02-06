@@ -16,9 +16,6 @@ public class Main {
 		Scanner reader = new Scanner(System.in);
 		int userInput = 0; 
 		int fibSeries = 0; 
-		long startTime = System.nanoTime();
-		long endTime = System.nanoTime();
-		long timeElapsed = endTime- startTime;
 		
 			// Welcome the user
 			System.out.println("Welcome to the Fibonacci Sequence Program");
@@ -29,18 +26,27 @@ public class Main {
 			reader.close();
 			System.out.println("UserInput=>" + userInput);
 			
+			//starting recursive function time
+			long startTime = System.nanoTime();
 			//recursive function print out
 			for(int i = 0; i < userInput;i++ ) {
 				fibSeries = fiboSeriesRec(i);
 				System.out.print(fibSeries+" ");
 			}
-			 System.out.println("\n\nElapsed time in nanoseconds is: " + timeElapsed);	
+			long endTime = System.nanoTime();
+			long timeElapsed = endTime- startTime;
+			 System.out.println("\n\n Recursive Method: Elapsed time is: " + timeElapsed+ " nanoseconds");	
 			
+			//starting iterative function time
+			startTime = System.nanoTime();
 			 //iterative function print out
 			 for(int i = 0; i < userInput;i++ ) {
 					fibSeries = fiboSeriesIte(i);
 					System.out.print(fibSeries+" ");
-				} System.out.println("\n\nElapsed time in nanoseconds is: " + timeElapsed);	
+				} 
+			 endTime = System.nanoTime();
+			 timeElapsed = endTime- startTime;
+			 System.out.println("\n\n Iterative Method:Elapsed time in nanoseconds is: " + timeElapsed+ " nanoseconds");	
 			
 	}
 		// fiboSeriesRec a recursive function that calls itself
@@ -52,8 +58,7 @@ public class Main {
 			else if (x == 1)
 				return 1;
 			else
-				return (fiboSeriesRec(x - 1) + fiboSeriesRec(x - 2)); 
-			
+				return (fiboSeriesRec(x - 1) + fiboSeriesRec(x - 2)); 		
 			
 		}
 		
