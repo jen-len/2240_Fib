@@ -1,9 +1,9 @@
 /* Jennifer Lennick 
  * 0627839
  * Program: Fibonacci Program
- * User will enter a number an the program will 
- * print the series up until the user entered value.
- * 
+ * User will enter a number an the program will print the series up until the user entered value.
+ * There is a recursive and an iterative method both of which find the next series
+ * There is a timer which measures the time it takes for each function to execute.
  */
 import java.util.Scanner;
 
@@ -37,23 +37,22 @@ public class Main {
 			//end iterative time
 			 endTime = System.nanoTime();
 			 timeElapsed = endTime- startTime;
-			 System.out.println("\nIterative Method Elapsed time: " + timeElapsed+ " nanoseconds");	
+			 System.out.println("\nIterative Method Elapsed time: " + timeElapsed+ " nanoseconds\n");	
 			 
-				//starting recursive function time
-				startTime = System.nanoTime();
-				//recursive function print out
-				for(int i = 0; i < userInput;i++ ) {
+			//starting recursive function time
+			startTime = System.nanoTime();
+			//recursive function print out
+			for(int i = 0; i < userInput;i++ ) {
 					fibSeries = fiboSeriesRec(i);
 					System.out.print(fibSeries+" ");
 				}
-				//end recursive time
-				endTime = System.nanoTime();
-				timeElapsed = endTime- startTime;
-				System.out.println("\nRecursive Method Elapsed time is: " + timeElapsed+ " nanoseconds\n");	
+			//end recursive time
+			endTime = System.nanoTime();
+			timeElapsed = endTime- startTime;
+			System.out.println("\nRecursive Method Elapsed time is: " + timeElapsed+ " nanoseconds\n");	
 			
 	}
 		// fiboSeriesRec a recursive function that calls itself
-		
 		public static int fiboSeriesRec(int x){
 			
 			if (x == 0) 
