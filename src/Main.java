@@ -27,19 +27,6 @@ public class Main {
 			reader.close();
 			System.out.println("UserInput=>" + userInput);
 			
-			//starting recursive function time
-
-			startTime = System.nanoTime();
-			//recursive function print out
-			for(int i = 0; i < userInput;i++ ) {
-				fibSeries = fiboSeriesRec(i);
-				System.out.print(fibSeries+" ");
-			}
-			//end recursive time
-			endTime = System.nanoTime();
-			timeElapsed = endTime- startTime;
-			System.out.println("\nRecursive Method: Elapsed time is: " + timeElapsed+ " nanoseconds\n");	
-			
 			//starting iterative function time
 			startTime = System.nanoTime();
 			 //iterative function print out
@@ -50,7 +37,19 @@ public class Main {
 			//end iterative time
 			 endTime = System.nanoTime();
 			 timeElapsed = endTime- startTime;
-			 System.out.println("\nIterative Method: Elapsed time in nanoseconds is: " + timeElapsed+ " nanoseconds");	
+			 System.out.println("\nIterative Method Elapsed time: " + timeElapsed+ " nanoseconds");	
+			 
+				//starting recursive function time
+				startTime = System.nanoTime();
+				//recursive function print out
+				for(int i = 0; i < userInput;i++ ) {
+					fibSeries = fiboSeriesRec(i);
+					System.out.print(fibSeries+" ");
+				}
+				//end recursive time
+				endTime = System.nanoTime();
+				timeElapsed = endTime- startTime;
+				System.out.println("\nRecursive Method Elapsed time is: " + timeElapsed+ " nanoseconds\n");	
 			
 	}
 		// fiboSeriesRec a recursive function that calls itself
